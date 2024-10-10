@@ -33,26 +33,29 @@
     <section>
         <h1> Piedra papel tijera </h1>
         <button onclick="
-        userChoice = `Piedra`
-        ppt(userChoice)
-        alert(`Seleccionaste Piedra. Computadora selecciono ${seleccionCompu}. ${resultado}`)
+        ppt(`Piedra`)
         ">Piedra</button>
 
         <button onclick="
-        userChoice = `Papel`
-        ppt(userChoice)
-        alert(`Seleccionaste Papel. Computadora selecciono ${seleccionCompu}. ${resultado}`)
+        ppt(`Papel`)
         ">Papel</button>
 
         <button onclick="
-        userChoice = `Tijeras`
-        ppt(userChoice)
-        alert(`Seleccionaste Tijeras. Computadora selecciono ${seleccionCompu}. ${resultado}`)
+        ppt(`Tijeras`)
     ">Tijera</button>
 
+        <button onclick="
+        marcador.Empates=0
+        marcador.Perdidos=0
+        marcador.Ganados=0
+        alert(`Marcador reiniciado`)">Reiniciar Marcador</button>
     </section>
     <script>
-        let userChoice=``;
+        const marcador={
+            Ganados: 0,
+            Perdidos: 0,
+            Empates: 0,
+        }
         let carQuant=0;
         let seleccionCompu =``;
         let resultado=``
@@ -79,7 +82,15 @@
             else{
                 resultado=`Perdiste`;
             }
-            return resultado
+
+            if (resultado===`Empate`)
+                marcador.Empates ++
+            else if (resultado===`Ganaste`)
+                marcador.Ganados ++
+            else
+                marcador.Perdidos ++
+            alert(`Seleccionaste ${userChoice}. Computadora selecciono ${seleccionCompu}. ${resultado}
+            Ganadas: ${marcador.Ganados}, Perdidas: ${marcador.Perdidos}, Empates${marcador.Empates}`)
         }
     </script>
 </div>
