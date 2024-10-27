@@ -2,9 +2,11 @@
     width: 80%;
     margin:auto;
 }
+.imagFondo{
+    background: linear-gradient(to bottom, lightblue, lightgreen);
+}
 .fondo{
     font-family: Comic Sans MS, Arial, serif;
-    background: linear-gradient(to bottom, lightblue, lightgreen);
 }
 
 
