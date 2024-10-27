@@ -48,16 +48,31 @@
         marcador.Empates=0
         marcador.Perdidos=0
         marcador.Ganados=0
+        localStorage.removeItem('marcador')
         alert(`Marcador reiniciado`)">Reiniciar Marcador</button>
     </section>
+
+
+    <section>
+        <h3> Uso de DOM</h3>
+        <button>Hola</button>
+    </section>
     <script>
-        const marcador={
-            Ganados: 0,
-            Perdidos: 0,
-            Empates: 0,
+
+        //DOM
+        console.log(document.body)
+        //Del Piedra papel y tijeras
+        let marcador= JSON.parse(localStorage.getItem('marcador'))  || { Empates: 0, Ganados: 0, Perdidos: 0 };
+
+        if (marcador===null){
+            marcador={
+                Ganados:0,
+                Perdidos: 0,
+                Empates:0
+            }
         }
         let carQuant=0;
-        let seleccionCompu =``;
+        let seleccionCompu ='';
         let resultado=``
         function ppt(userChoice) {
             const numeroRandom =Math.random();
@@ -89,8 +104,10 @@
                 marcador.Ganados ++
             else
                 marcador.Perdidos ++
+
             alert(`Seleccionaste ${userChoice}. Computadora selecciono ${seleccionCompu}. ${resultado}
             Ganadas: ${marcador.Ganados}, Perdidas: ${marcador.Perdidos}, Empates${marcador.Empates}`)
+            localStorage.setItem(`marcador`, JSON.stringify(marcador));
         }
     </script>
 </div>
