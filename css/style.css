@@ -2,11 +2,13 @@
     width: 80%;
     margin:auto;
 }
-.imagFondo{
-    background: linear-gradient(to bottom, lightblue, lightgreen);
-}
-.fondo{
-    font-family: Comic Sans MS, Arial, serif;
+body {
+    margin: 0; /* Elimina los márgenes por defecto */
+    min-height: 100vh; /* Permite que el body se expanda con el contenido */
+    background: linear-gradient(to bottom, lightblue, lightgreen); /* Ajusta los colores del degradado */
+    background-size: cover; /* Asegura que el gradiente cubra toda el área */
+    background-repeat: no-repeat; /* Evita que el degradado se repita */
+    font-family: Comic Sans MS, Arial, serif; /* Fuente para toda la página */
 }
 
 
