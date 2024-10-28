@@ -18,6 +18,16 @@ function updateText(){
         textResult.innerText=` Seleccionaste ${userChoice}. Computadora selecciono ${seleccionCompu}. ${resultado}`
     }
 }
+
+function reinicioText(){
+    marcador.Empates=0
+    marcador.Perdidos=0
+    marcador.Ganados=0
+    localStorage.removeItem('marcador')
+    updatMarcador()
+    marcador.OG=0
+    textResult.innerText='Marcador Reiniciado'
+}
 // Funciones del Piedra papel tijera mejorado
 let marcador= JSON.parse(localStorage.getItem('marcador'))  || { Empates: 0, Ganados: 0, Perdidos: 0 };
 const checkMarcador= document.querySelector('.Marcador')
