@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Segunda parte de funciones</title>
+    <title>Funciones-de-JS-pt2</title>
+    <script src="Funciones.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-<body class="fondo">
+<body class="fondo" onload=" updatMarcador() ">
 <div class="center">
+    <section>
+        <p> Copia de Boton de Youtube</p>
+        <button onclick=" suscrito() " class="JS-SubsButton">Suscribete</button>
+    </section>
+    <section>
+        <p>Version mejorada del Piedra Papel y Tiejras</p>
+        <h1> Piedra papel tijera </h1>
+        <button onclick="
+        ppt(`Piedra`)
+        ">Piedra</button>
 
+        <button onclick="
+        ppt(`Papel`)
+        ">Papel</button>
+
+        <button onclick="
+        ppt(`Tijeras`)
+    ">Tijera</button>
+
+        <p class="Marcador"></p>
+
+        <button onclick="
+        marcador.Empates=0
+        marcador.Perdidos=0
+        marcador.Ganados=0
+        marcador.OG=0
+        localStorage.removeItem('marcador')
+        updatMarcador()
+        alert(`Marcador reiniciado`)">Reiniciar Marcador</button>
+        <p class="Resultado"></p>
+
+
+    </section>
 </div>
 </body>
 
 <footer>
+    </br>
+    </br>
+    </br>
+    </br>
     <div class="center">
-        <a href="index.html">
-            <img width="200" src="https://cdn.icon-icons.com/icons2/2249/PNG/512/home_circle_outline_icon_139029.png" alt="imagen de icono de casa"> </a>
+            <a href="index.html"> <img width="200" src="https://cdn.icon-icons.com/icons2/2249/PNG/512/home_circle_outline_icon_139029.png" alt="imagen de icono de casa"> </a>
     </div>
 </footer>
 </html>
